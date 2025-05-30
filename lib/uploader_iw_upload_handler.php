@@ -208,7 +208,7 @@ class uploader_iw_upload_handler extends uploader_upload_handler
 
                             $metaName = $metaField['column_name'];
                             $value = $mediaFile->getValue($metaName); //Bereits erfasster Wert durch MEDIA_ADDED/MEDIA_UPDATED
-                            if(isset($this->savedPostVars[$metaName]) && mb_strlen($this->savedPostVars[$metaName]) > 0) {
+                            if(isset($this->savedPostVars[$metaName]) && !empty($this->savedPostVars[$metaName])) {
                                 //Uploader-Feature: Nutze angegebene Daten für alle Dateien
                                 $value = $this->savedPostVars[$metaName];
                             }
